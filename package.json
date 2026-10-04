@@ -1,0 +1,14 @@
+{
+  "name": "luna-dashboard-financeiro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dashboard financeiro pessoal dark neon, preparado para Supabase e n8n",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs --dist",
+    "test": "node --test"
+  }
+}
