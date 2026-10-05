@@ -47,12 +47,13 @@ Variáveis públicas são visíveis no navegador. `.env` e `.env.*` estão ignor
 
 ## Publicar no GitHub Pages
 
-O workflow `.github/workflows/pages.yml` testa, constrói e publica a branch `main`.
+O workflow `.github/workflows/pages.yml` testa e constrói a branch `main`. A publicação fica desativada por padrão e só ocorre quando a variável `ENABLE_GITHUB_PAGES` estiver definida como `true`.
 
 1. Envie o conteúdo desta pasta para a raiz do repositório.
 2. No GitHub, abra **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-3. Se necessário, inicie o workflow em **Actions → Validate and deploy Pages → Run workflow**.
-4. O endereço aparecerá em Pages e no ambiente `github-pages` após o deploy.
+3. Em **Settings → Secrets and variables → Actions → Variables**, crie `ENABLE_GITHUB_PAGES` com valor `true` quando quiser publicar. Essa variável apenas autoriza o deploy, não contém segredo.
+4. Inicie o workflow em **Actions → Validate and deploy Pages → Run workflow**. Após ativar a variável, novos commits em `main` também publicam automaticamente.
+5. O endereço aparecerá em Pages e no ambiente `github-pages` após o deploy.
 
 Por padrão publica demo. Para Supabase, defina as três variáveis em **Settings → Secrets and variables → Actions → Variables**, execute a migration e configure usuários. Somente valores públicos pertencem a essas variáveis. GitHub Pages hospeda o frontend; o backend fica no Supabase/n8n.
 
